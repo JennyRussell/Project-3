@@ -21,12 +21,13 @@ function Welcome() {
                 </div>
 <div className="flex justify-end">
                 <form className="input-group mr-2 mt-10">
-                
-                <div className="email border-2 w-40 h-10 bg-white m-2" label="Email"></div>
-               
-                <div className="password border-2 w-40 h-10 bg-white m-2" label="Password"></div>
-         
-                <button className="login-btn rounded w-20 h-10 bg-pink-400 text-white m-2">Login</button>
+                <label className="label" htmlFor="email">
+                <input className="email border-2 w-40 h-10 bg-white m-2" placeholder="Email"></input>
+                </label>
+                <label className="label" htmlFor="password">
+                <input className="password border-2 w-40 h-10 bg-white m-2" placeholder="Password"></input>
+                </label>
+                <button className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-3">Login</button>
                 </form>
                 </div>
             </nav>
