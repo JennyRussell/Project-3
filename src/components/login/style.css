@@ -1,39 +1,75 @@
 .container {
-    margin: auto;
-    border: 2px solid black;
-    border-radius: 15px;
-    width: 30%;
-    padding: 10px;
-    
-    
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 30%;
+  padding: 15px;
 }
 
 .header {
-    font-size: 24px;
-    font-family: "Open Sans", sans-serif;
-    
+  font-size: 24px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    font-size: 24px;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  font-size: 18px;
+}
+
+.log {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 15em;
+}
+
+.btn {
+  margin: 10px;
+  font-size: 16px;
 }
 
 .rg-container {
-    margin: auto;
-    border: 2px solid black;
-    border-radius: 15px;
-    width: 30%;
-    padding: 10px;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 30%;
+  padding: 10px;
+  background-color: #caf7e3;
+}
+
+.rg-content {
+  margin: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .form-rg {
-    display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 60px;
-        grid-gap: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  /* display: grid ;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 60px;
+  grid-gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+label {
+  margin: 5px 10px 5px 0;
+}
+
+input {
+  align-items: center;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: white;
+  border: 0;
+  border-radius: 4px;
+  transition: all 250ms ease-in-out;
+  outline: none;
+  box-shadow: 0px 0px 12px 5.8px #e4bad4;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
