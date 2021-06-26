@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.jumbotron {
+  background-size: cover;
+  font-family: "Niconne", cursive;
+}
+
+.feature-text {
+  font-family: "Niconne", cursive;
+  font-size: xx-large;
+}
+
+.sign-up-btn {
+  font-family: "Niconne", cursive;
+}
