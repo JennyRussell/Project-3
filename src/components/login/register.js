@@ -13,36 +13,36 @@ export class Register extends React.Component {
           {/* <div className="image">
                     <img src={loginImg} />
                 </div> */}
-          <div className="form">
+          <div className="form-rg">
             <div className="first-name">
               <lable htmlFor="first-name"></lable>
               <input type="text" name="first" placeholder="First Name" />
             </div>
-            <div className="last-name">
+            <div className="form-rg">
               <lable htmlFor="last-name"></lable>
               <input type="text" name="last" placeholder="Last Name" />
             </div>
-            <div className="form-group-rg">
+            <div className="form-rg">
               <lable htmlFor="email"></lable>
               <input type="email" name="email" placeholder="Email" />
             </div>
-            <div className="form-group-rg">
+            <div className="form-rg">
               <lable htmlFor="password"></lable>
               <input type="password" name="password" placeholder="Password" />
             </div>
-            <div className="birthdate">
+            <div className="form-rg">
               <lable htmlFor="birthdate"></lable>
               <input type="text" name="birthdate" placeholder="Birthdate" />
             </div>
-            <div className="gender">
+            <div className="form-rg">
               <lable htmlFor="gender"></lable>
               <input type="text" name="gender" placeholder="Gender" />
             </div>
-            <div className="phone">
+            <div className="form-rg">
               <lable htmlFor="phone"></lable>
               <input type="text" name="phone" placeholder="Phone Number" />
             </div>
-            <div className="anniversary">
+            <div className="form-rg">
               <lable htmlFor="anniversary"></lable>
               <input
                 type="text"
@@ -50,7 +50,7 @@ export class Register extends React.Component {
                 placeholder="Anniversary Date"
               />
             </div>
-            <div className="relationship">
+            <div className="form-rg">
               <lable htmlFor="relationship"></lable>
               <input
                 type="text"
