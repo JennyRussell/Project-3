@@ -16,16 +16,19 @@ function App(props) {
     <div className="App">
         <Router>
         <Switch>
-          <Route path="/" exact>
+          <Route exact path="/">
             <Welcome />
           </Route>
 
-          <Route path="/login/register" exact>
+          <Route exact path="/signup">
             <Signup />
+          </Route>
+
+          <Route exact path="/userpage">
+            <UserPage />
           </Route>
         </Switch>
       </Router>
-      <UserPage />
     </div>
   );
 };

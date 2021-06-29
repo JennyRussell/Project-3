@@ -6,9 +6,6 @@ import { useHistory } from 'react-router-dom';
 
 function UserPage() {
 
-  const history = useHistory();
-
-
     return (
         <div>
             <nav className='w-100 h-24 border-2'>
