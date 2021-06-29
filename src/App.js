@@ -1,19 +1,16 @@
-
-import './App.css';
-import './components/login/style.css';
-import Signup from './components/login/register';
-import Welcome from './components/Welcome';
-import UserPage from './components/user-page/UserPage';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AddPerson from './components/add-person/AddPerson';
-
+import "./App.css";
+import "./components/login/style.css";
+import Signup from "./components/login/register";
+import Welcome from "./components/Welcome";
+import UserPage from "./components/user-page/UserPage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AddPerson from "./components/add-person/AddPerson";
 
 function App(props) {
-
   return (
     <div className="App">
-        <Router>
+      <Router>
         <Switch>
           <Route exact path="/">
             <Welcome />
@@ -34,6 +31,6 @@ function App(props) {
       </Router>
     </div>
   );
-};
-      
+}
+
 export default App;
