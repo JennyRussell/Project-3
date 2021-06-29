@@ -28,7 +28,7 @@ function Welcome() {
                 <label className="label" htmlFor="password">
                 <input className="password border-2 w-40 h-10 bg-white m-2" placeholder="Password"></input>
                 </label>
-                <button className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-3">Login</button>
+                <button onClick={() => history.push('/userpage')} className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-3">Login</button>
                 </form>
                 </div>
             </nav>
@@ -55,7 +55,7 @@ function Welcome() {
                 
             </div>
             <div className="bg-green-100 p-10">
-                <button onClick={() => history.push('./login/register')} className="sign-up-btn button w-50 h-36 bg-pink-400 rounded-2xl text-6xl text-white">Click Here To Sign Up!</button>
+                <button onClick={() => history.push('/signup')} className="sign-up-btn button w-50 h-36 bg-pink-400 rounded-2xl text-6xl text-white">Click Here To Sign Up!</button>
             </div>
         </div>
        

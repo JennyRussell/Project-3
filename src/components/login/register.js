@@ -60,7 +60,7 @@ function Signup (props) {
           </div>
         </form>
         <div className="footer">
-          <button onClick={() => history.push('../user-page/UserPage')}  type="button" className="btn-rg">
+          <button onClick={() => history.push('/userpage')}  type="button" className="btn-rg">
             Create Account
           </button>
         </div>

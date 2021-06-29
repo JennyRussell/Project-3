@@ -2,12 +2,17 @@ import React from 'react';
 import addUser from '../placeholder.png'
 import text from '../text.png'
 import video from '../video.jpeg'
+import { useHistory } from 'react-router-dom';
+
 
 function clicked() {
     console.log("i clicked")
 }
 
 function People() {
+
+    const history = useHistory();  
+
     return (
         <div className="">
             <img className="icon w-32 h-32 border-1 mt-5 ml-5" src={addUser} alt="dFVDVS"></img>
