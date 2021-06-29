@@ -1,11 +1,10 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 
-export class Register extends React.Component {
-  // tsConstructorType(props) {
-  //     super(props);
-  // }
+function Signup (props) {
 
-  render() {
+  const history = useHistory();
+
     return (
       <div className="rg-container">
         <div className="rg-header">Register</div>
@@ -61,11 +60,12 @@ export class Register extends React.Component {
           </div>
         </form>
         <div className="footer">
-          <button type="button" className="btn-rg">
+          <button onClick={() => history.push('../user-page/UserPage')}  type="button" className="btn-rg">
             Create Account
           </button>
         </div>
       </div>
     );
   }
-}
+
+export default Signup;
