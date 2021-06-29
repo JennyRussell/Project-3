@@ -28,7 +28,7 @@ function Welcome() {
                 <label className="label" htmlFor="password">
                 <input className="password border-2 w-40 h-10 bg-white m-2" placeholder="Password"></input>
                 </label>
-                <button className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-3">Login</button>
+                <button onClick={() => history.push('/userpage')} className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-3">Login</button>
                 </form>
                 </div>
             </nav>
