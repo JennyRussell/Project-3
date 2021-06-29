@@ -5,11 +5,12 @@ import forgetmenots from "./forgetmenots.png";
 import bdaycake from "./bdaycake.png";
 import graduation from "./graduation.png";
 import champagne from "./champagne.png";
+import { useHistory } from 'react-router-dom';
 
 
 
 function Welcome() {
-    
+    const history = useHistory();  
 
     return (
         <div>
@@ -54,7 +55,7 @@ function Welcome() {
                 
             </div>
             <div className="bg-green-100 p-10">
-                <button className="sign-up-btn button w-50 h-36 bg-pink-400 rounded-2xl text-6xl text-white">Click Here To Sign Up!</button>
+                <button onClick={() => history.push('./login/register')} className="sign-up-btn button w-50 h-36 bg-pink-400 rounded-2xl text-6xl text-white">Click Here To Sign Up!</button>
             </div>
         </div>
        
