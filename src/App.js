@@ -5,6 +5,7 @@ import './components/login/style.css';
 import { Register } from './components/login/index';
 import Welcome from './components/Welcome';
 import UserPage from './components/user-page/UserPage';
+import AddUser from './components/addUser/AddUser';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -16,6 +17,7 @@ function App() {
       <Login />
       <Register />
       <UserPage />
+      <AddUser />
     </div>
   );
 }
