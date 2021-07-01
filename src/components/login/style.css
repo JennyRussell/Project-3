@@ -30,36 +30,45 @@
   font-size: 16px;
 }
 
-.rg-container {
+.container-rg {
   margin: auto;
+  margin-top: 8%;
   /* border: 2px solid black; */
   border-radius: 15px;
-  width: 30%;
-  padding: 10px;
+  width: 50%;
+  height: 60vh;
+  padding: 20px;
   background-color: #caf7e3;
   transition: all 250ms ease-in-out;
   outline: none;
   /* box-shadow: 10px 10px 10px 3.8px #e4bad4; */
 }
 
-.rg-content {
-  margin: 10px;
-  display: flex;
+.content-rg {
+  margin: 40px;
+  padding: 10px;
+  width: 90%;
+
+  /* display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-around; */
 }
 
 .form-rg {
   display: flex;
   flex-flow: wrap;
+  justify-content: space-evenly;
 }
 
-label {
-  margin: 5px 10px 5px 0;
-}
+/* ::placeholder {
+  width: 100%;
+  padding: 10px;
+} */
 
 input {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin: 5px 10px 5px 0;
   padding: 10px;
