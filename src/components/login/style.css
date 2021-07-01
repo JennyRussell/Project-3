@@ -36,8 +36,8 @@
   /* border: 2px solid black; */
   border-radius: 15px;
   width: 50%;
-  height: 60vh;
-  padding: 20px;
+  height: 70vh;
+  padding: 10px;
   background-color: #caf7e3;
   transition: all 250ms ease-in-out;
   outline: none;
@@ -45,28 +45,32 @@
 }
 
 .content-rg {
-  margin: 40px;
+  margin: auto;
   padding: 10px;
   width: 90%;
-
-  /* display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: space-around; */
 }
 
 .form-rg {
+  height: 40vh;
   display: flex;
   flex-flow: wrap;
   justify-content: space-evenly;
 }
 
-/* ::placeholder {
+.row {
+  height: 35%;
+  width: 35rem;
+  margin: auto;
+  justify-content: center;
+}
+
+::placeholder {
   width: 100%;
   padding: 10px;
-} */
+}
 
 input {
+  height: 30px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -91,6 +95,7 @@ input {
   border: #e285bf 0.125em solid;
   border-radius: 15px;
   padding: 0.25em 1em;
+  margin: 70px;
   /* border-radius: 00.25em;
   text-shadow: 0 0 0.125em hsl(0, 0%, 100% / 0.3), 0 0 0.45em currentColor;
   box-shadow: inset 0 0 0.5em 0 #e285bf, 0 0 0.5em 0 #e285bf; */
