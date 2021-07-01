@@ -14,13 +14,13 @@ function Welcome() {
 
     return (
         <div>
-            <nav className="navigation flex row justify-around bg-green-100">
-                <div className="row m-2 p-2 w-1/2 justify-start">
-                <img className="icon w-24 h-24 m-2 border-1" src={bdaycake} alt=""></img>
-                <img className="icon w-24 h-24 border-1 m-2" src={graduation} alt=""></img>
-                <img className="icon w-24 h-24 border-1 m-2" src={champagne} alt=""></img>
+            <nav className="navigation flex justify-between bg-green-100">
+                <div className="row">
+                <img className="icon w-24 h-24 m-3 border-1 mr-4" src={bdaycake} alt=""></img>
+                <img className="icon w-24 h-24 border-1 m-3 mr-4" src={graduation} alt=""></img>
+                <img className="icon w-24 h-24 border-1 m-3" src={champagne} alt=""></img>
                 </div>
-<div className="flex justify-end">
+<div className="mr-5">
                 <form className="input-group mr-2 mt-10">
                 <label className="label" htmlFor="email">
                 <input className="email border-2 w-40 h-10 bg-white m-2" placeholder="Email"></input>
@@ -28,7 +28,7 @@ function Welcome() {
                 <label className="label" htmlFor="password">
                 <input className="password border-2 w-40 h-10 bg-white m-2" placeholder="Password"></input>
                 </label>
-                <button onClick={() => history.push('/userpage')} className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-3">Login</button>
+                <button onClick={() => history.push('/userpage')} className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-2">Login</button>
                 </form>
                 </div>
             </nav>
@@ -39,18 +39,18 @@ function Welcome() {
                 </div>
             
             </div>
-            <div className="feature-container flex row justify-around bg-green-100 pt-10">
-            <img className="icon w-48 h-48 m-2 border-1 ml-5 mt-4" src={bdaycake} alt=""></img>
+            <div className="flex row justify-around bg-green-100 pt-10 w-100">
+            <img className="icon w-48 h-48 m-4 border-1 mt-4" src={bdaycake} alt=""></img>
             <p className="feature-text w-3/4 mt-26 text-left mr-5 p-4 text-pink-400 bg-white rounded-2xl">Never forget a birthday, anniversary, graduation, or any other special occasion when you set up text and email reminders for the special people in your life.</p>
                 
             </div>
-            <div className="feature-container flex row justify-around bg-green-100">
-            <img className="icon w-48 h-48 m-2 border-1 ml-5 mt-4" src={graduation} alt=""></img>
+            <div className="flex row justify-around bg-green-100 w-100">
+            <img className="icon w-48 h-48 m-4 border-1 mt-4" src={graduation} alt=""></img>
             <p className="feature-text w-3/4 mt-26 text-left mr-5 p-4 text-pink-400 bg-white rounded-2xl">Add all your favorite people and their special dates to your user profile page. View all upcoming special occasions on a calendar.</p>
                 
             </div>
-            <div className="feature-container flex row justify-around bg-green-100">
-            <img className="icon w-48 h-48 m-2 border-1 ml-5 mt-4" src={champagne} alt=""></img>
+            <div className="flex row justify-around bg-green-100 w-100">
+            <img className="icon w-48 h-48 m-4 border-1 mt-4" src={champagne} alt=""></img>
             <p className="feature-text w-3/4 mt-26 text-left mr-5 p-4 text-pink-400 bg-white rounded-2xl">Call that special someone on video chat to tell them you are thinking about them or send a personalized text message.</p>
                 
             </div>
