@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState }  from "react";
 
 
 
 
-export class Register extends React.Component {
+function Register() {
 
     // tsConstructorType(props) {
     //     super(props);
     // }
 
-    render() {
-        return <div className="rg-container">
+    const [firstName, setFirstName] = useState('')
+    
+
+    return (
+        <div className="rg-container">
             <div className="rg-header">Register</div>
             <div className="rg-content">
                 {/* <div className="image">
@@ -19,7 +22,7 @@ export class Register extends React.Component {
                 <div className="form">
                     <div className="first-name">
                         <lable htmlFor="first-name"></lable>
-                        <input type="text" name="first" placeholder="First Name" />
+                        <input type="text" name="first" placeholder="First Name" value={firstName} onKeyUp={ e => setFirstName(e.target.value)}/>
                     </div>
                     <div className="last-name">
                         <lable htmlFor="last-name"></lable>
@@ -65,5 +68,5 @@ export class Register extends React.Component {
                 </button>
             </div>
         </div>
-    }
+    )
 }
