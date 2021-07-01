@@ -16,6 +16,7 @@ function App(props) {
             <Welcome />
           </Route>
 
+
           <Route exact path="/signup">
             <Signup />
           </Route>
@@ -29,6 +30,7 @@ function App(props) {
           </Route>
         </Switch>
       </Router>
+
     </div>
   );
 }

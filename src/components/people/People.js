@@ -4,13 +4,17 @@ import text from "../text.png";
 import video from "../video.jpeg";
 import { useHistory } from "react-router-dom";
 
-function clicked() {
-  console.log("i clicked");
-}
 
+// when the user's person info renders with all their dates and add btn
+// on submit triggers put request to the database to update user's events
+// this way, when the user goes back to their calendar page, the new event will populate
 function People() {
-  const history = useHistory();
 
+  const clicked = () => {
+    console.log("clicked!");
+    //trigger the profile page to populate
+  };
+  const history = useHistory();
   return (
     <div className="">
       <img
