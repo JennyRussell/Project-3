@@ -16,11 +16,11 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    first: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    last: {
+    last_name: {
     type: DataTypes.STRING,
     allowNull: false,
     },
@@ -32,15 +32,29 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
-        len: [6],
+        isEmail: true,
       },
     },
+    birthdate: {
+      type: DataTypes.DATE,
+      allowNull: false,
   },
+    phoneNumber: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: true,
+  },
+    anniversary: {
+      type: DataTypes.DATE,
+      allowNull: false,
+  },
+},
   {
     hooks: {
-      async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+    beforeCreate(newUserData) {
+        newUserData.password =  bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
     },
