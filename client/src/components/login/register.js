@@ -129,7 +129,7 @@ function Signup() {
           </div>
           <button
             className="btn-rg"
-            // onClick={() => history.push("/userpage")}
+            onClick={() => history.push("/userpage")}
             type="submit"
           >
             Create Account

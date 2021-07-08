@@ -22,15 +22,23 @@ function UserPage() {
     // would initialize as empty state useState([]);
     const [events, setEvents] = useState([
         {
-            start: moment("20210630,", "YYYYMMDD").toDate(),
-            end: moment().toDate(),
+            start: moment().toDate(),
+            end: moment("20210709,", "YYYYMMDD").toDate(),
             title: "Wednesday's Class",
+            allDay: true
         },
         {
-            start: moment("20210704", "YYYYMMDD").fromNow(),
-            end: moment().add(1, "days").toDate(),
+            start: moment("20210720", "YYYYMMDD").toDate(),
+            end: moment("20210720").add(3, "days").toDate(),
+            allDay: true,
             title: "Independence Day",
         },
+        // {
+        //   start: moment("20210720", "YYYYMMDD").fromNow(),
+        //     end: moment("20210720", "YYYYMMDD").toDate(),
+        //     allDay: true,
+        //     title: "Independence Day",
+        // }
     ]);
 
     return (
@@ -56,8 +64,9 @@ function UserPage() {
               alt="DVBSB"
             ></img>
           </button>
-
+          <Calendar localizer={localizer} events={events}/>
         </div>
+        
       </div>
     </div>
 
