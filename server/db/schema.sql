@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS remindu_db;
+
+CREATE DATABASE remindu_db;

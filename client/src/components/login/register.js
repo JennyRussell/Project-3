@@ -1,32 +1,53 @@
-import { useState } from "react";
+// import { useState } from "react";
 import AUTH from "../../utils/AUTH";
 import { useHistory } from "react-router-dom";
+import React, { useState, useEffect }  from "react";
+import Axios from 'axios';
+
 
 function Signup() {
+
   const history = useHistory();
   const [newUser, setNewUser] = useState({
     first_name: "",
     last_name: "",
     email: "",
+    password: "",
     birthdate: "",
-    anniversary: "",
     phone_number: "",
+    anniversary: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("click");
-    console.log(newUser);
-    AUTH.register(newUser)
-      .then(() => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("click");
+  //   console.log(newUser);
+  //   AUTH.register(newUser)
+  //     .then(() => {
+  //       console.log(newUser);
+  //       AUTH.login(newUser.email, newUser.password);
+  //     })
+  //     .then((res) => {
+  //       console.log(res.data.user);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+
+   const handleSubmit = event => {
+        event.preventDefault();
         console.log(newUser);
-        AUTH.login(newUser.email, newUser.password);
-      })
-      .then((res) => {
-        console.log(res.data.user);
-      })
-      .catch((err) => console.log(err));
-  };
+        Axios.post('http://localhost:3001/api/register', {
+        first_name: newUser.first_name,
+        lastName: newUser.last_name,
+        email: newUser.email,
+        password: newUser.password,
+        birthdate: newUser.birthdate, 
+        phone_number: newUser.phone_number, 
+        anniversary: newUser.anniversary,
+    }).then(() => {
+        alert('front end register submit worked')
+    })
+    };
 
   return (
     <div className="container-rg">
@@ -108,7 +129,7 @@ function Signup() {
           </div>
           <button
             className="btn-rg"
-            onClick={() => history.push("/userpage")}
+            // onClick={() => history.push("/userpage")}
             type="submit"
           >
             Create Account
