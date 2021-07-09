@@ -59,7 +59,7 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
-              type="text"
+              type="text" required
               placeholder="First Name"
               name="firstName"
               onChange={(e) =>
@@ -68,7 +68,7 @@ function Signup() {
             />
             <input
               className="registerInput"
-              type="text"
+              type="text" required
               placeholder="Last Name"
               name="lastName"
               onChange={(e) =>
@@ -79,7 +79,7 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
-              type="email"
+              type="email" required
               placeholder="Email"
               name="email"
               onChange={(e) =>
@@ -88,7 +88,7 @@ function Signup() {
             />
             <input
               className="registerInput"
-              type="password"
+              type="password" required
               placeholder="Password"
               name="password"
               onChange={(e) =>
@@ -99,7 +99,7 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
-              type="date"
+              type="date" required
               placeholder="birthdate"
               name="birthdate"
               onChange={(e) =>
@@ -108,7 +108,7 @@ function Signup() {
             />
             <input
               className="registerInput"
-              type="date"
+              type="date" required
               placeholder="Anniversary Date"
               name="anniversary"
               onChange={(e) =>
@@ -119,7 +119,7 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
-              type="number"
+              type="number" required
               placeholder="Phone Number"
               name="phoneNumber"
               onChange={(e) =>
