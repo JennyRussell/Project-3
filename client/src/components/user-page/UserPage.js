@@ -14,22 +14,30 @@ const localizer = momentLocalizer(moment) // or globalizeLocalizer
 function UserPage() {
 
   const history = useHistory();
-
+//     useEffect(() => {
+        // call to the api to get the user's events
+        // const userEvents = API.getUserEvents
+            // .then().catch()
+            // set the event state to their events
+            // setEvents(userEvents)
+            // datetime format back from mysql -- see how that works to get moment formatted dates
+    // }, [])
+    const localizer = momentLocalizer(moment);
 
     // would initialize as empty state useState([]);
     const [events, setEvents] = useState([
-        {
-            start: moment().toDate(),
-            end: moment("20210709,", "YYYYMMDD").toDate(),
-            title: "Wednesday's Class",
-            allDay: true
-        },
-        {
-            start: moment("20210720", "YYYYMMDD").toDate(),
-            end: moment("20210720").add(3, "days").toDate(),
-            allDay: true,
-            title: "Independence Day",
-        },
+        // {
+        //     start: moment().toDate(),
+        //     end: moment("20210709,", "YYYYMMDD").toDate(),
+        //     title: "Wednesday's Class",
+        //     allDay: true
+        // },
+        // {
+        //     start: moment("20210720", "YYYYMMDD").toDate(),
+        //     end: moment("20210720").add(3, "days").toDate(),
+        //     allDay: true,
+        //     title: "Independence Day",
+        // },
         // {
         //   start: moment("20210720", "YYYYMMDD").fromNow(),
         //     end: moment("20210720", "YYYYMMDD").toDate(),
