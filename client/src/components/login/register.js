@@ -36,7 +36,7 @@ function Signup() {
    const handleSubmit = event => {
         event.preventDefault();
         console.log(newUser);
-        Axios.post('http://localhost:3001/api/register', {
+        Axios.post('http://localhost:3001/register', {
         first_name: newUser.first_name,
         lastName: newUser.last_name,
         email: newUser.email,
@@ -129,7 +129,7 @@ function Signup() {
           </div>
           <button
             className="btn-rg"
-            onClick={() => history.push("/userpage")}
+            // onClick={() => history.push("/userpage")}
             type="submit"
           >
             Create Account
