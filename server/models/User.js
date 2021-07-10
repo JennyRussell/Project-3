@@ -28,21 +28,21 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+      validate: {
+        isEmail: true,
+      },
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
     birthdate: {
       type: DataTypes.DATE,
       allowNull: false,
   },
-    phoneNumber: {
-      type: DataTypes.INTEGER,
+    phone_number: {
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true,
   },
@@ -54,7 +54,7 @@ User.init(
   {
     hooks: {
     beforeCreate(newUserData) {
-        newUserData.password =  bcrypt.hash(newUserData.password, 10);
+        newUserData.password =  bcrypt.hashSync(newUserData.password, 10);
         return newUserData;
       },
     },
@@ -66,4 +66,7 @@ User.init(
   }
 );
 
+User.sync({
+  alter: true
+})
 module.exports = User;
