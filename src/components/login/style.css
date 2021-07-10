@@ -100,3 +100,37 @@ input {
   text-shadow: 0 0 0.125em hsl(0, 0%, 100% / 0.3), 0 0 0.45em currentColor;
   box-shadow: inset 0 0 0.5em 0 #e285bf, 0 0 0.5em 0 #e285bf; */
 }
+
+@media only screen and (max-width: 950px) {
+  container-rg {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .content-rg {
+    max-width: 400px;
+  }
+}
+
+@media only screen and (max-width: 949px) {
+  .container-rg {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row {
+    width: 160px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container-rg {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row {
+    max-width: 160px;
+    margin: auto;
+  }
+}
