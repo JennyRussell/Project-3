@@ -22,13 +22,13 @@ function AddPerson () {
               <label htmlFor="email"></label>
               <input className="input m-1" type="text" name="last" placeholder="Last Name" />
               <label htmlFor="last name"></label>
-              <input className="input m-1" type="text" name="birthdate" placeholder="Birthdate" />
+              <input className="input m-1" type="date" name="birthdate" placeholder="Birthdate" />
             </div>
             <div className="input-2 m-2 flex-col">
               <label htmlFor="relationship"></label>
               <input className="input m-1" type="text" name="relationship" placeholder="Relationship" />
               <label htmlFor="anniversary"></label>
-              <input className="input m-1" type="text" name="anniveersary" placeholder="Anniversary" />
+              <input className="input m-1" type="date" name="anniversary" placeholder="Anniversary" />
               <label htmlFor="special-occasion"></label>
               <input className="input m-1" type="text" name="special" placeholder="Special Occasion" />
             </div>

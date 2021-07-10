@@ -3,8 +3,12 @@ import People from '../people/People';
 import addUser from "../addUser.png";
 import { useHistory } from 'react-router-dom';
 import imagePh from '../image-ph.png';
-import { Calendar } from "react-big-calendar";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from 'moment';
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
+
+const localizer = momentLocalizer(moment) // or globalizeLocalizer
 
 
 function UserPage() {

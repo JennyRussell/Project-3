@@ -52,7 +52,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+console.log("fucker")
 
 // app.post('/api/register', async (req, res) => {
 //   try {

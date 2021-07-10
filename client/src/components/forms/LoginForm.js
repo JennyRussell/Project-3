@@ -24,12 +24,12 @@ export function LoginForm(props){
         <form className="input-group mr-2 mt-10" onSubmit={handleSubmit}>
          <label className="label" htmlFor="email">
                 <input 
-                type="text" {...bindEmail}
+                type="text" required {...bindEmail}
                 className="email border-2 w-40 h-10 bg-white m-2" placeholder="Email"></input>
                 </label>
                 <label className="label" htmlFor="password">
                 <input 
-                 type="text" {...bindPassword}
+                 type="password" required {...bindPassword}
                 className="password border-2 w-40 h-10 bg-white m-2" placeholder="Password"></input>
                 </label>
                 {/* onClick={() => history.push('/userpage')}  */}

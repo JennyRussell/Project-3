@@ -5,15 +5,15 @@ function addUser() {
     <div className="rg-container">
       <div className="first-name">
         <lable htmlFor="first-name"></lable>
-        <input type="text" name="first" placeholder="First Name" />
+        <input type="text" required name="first" placeholder="First Name" />
       </div>
       <div className="last-name">
         <lable htmlFor="last-name"></lable>
-        <input type="text" name="last" placeholder="Last Name" />
+        <input type="text" required name="last" placeholder="Last Name" />
       </div>
       <div className="birthdate">
         <lable htmlFor="birthdate"></lable>
-        <input type="text" name="birthdate" placeholder="Birthdate" />
+        <input type="date" required name="birthdate" placeholder="Birthdate" />
       </div>
       {/* <div className="gender">
         <lable htmlFor="gender"></lable>
@@ -21,11 +21,11 @@ function addUser() {
       </div> */}
       <div className="phone">
         <lable htmlFor="phone"></lable>
-        <input type="text" name="phone" placeholder="Phone Number" />
+        <input type="text" required name="phone" placeholder="Phone Number" />
       </div>
       <div className="anniversary">
         <lable htmlFor="anniversary"></lable>
-        <input type="text" name="anniversary" placeholder="Anniversary Date" />
+        <input type="date" name="anniversary" placeholder="12/12/2021"/>
       </div>
       <div className="relationship">
         <lable htmlFor="relationship"></lable>
