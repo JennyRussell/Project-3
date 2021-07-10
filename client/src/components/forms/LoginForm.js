@@ -29,7 +29,7 @@ export function LoginForm(props){
                 </label>
                 <label className="label" htmlFor="password">
                 <input 
-                 type="text" required {...bindPassword}
+                 type="password" required {...bindPassword}
                 className="password border-2 w-40 h-10 bg-white m-2" placeholder="Password"></input>
                 </label>
                 {/* onClick={() => history.push('/userpage')}  */}

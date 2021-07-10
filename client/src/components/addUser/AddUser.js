@@ -13,7 +13,7 @@ function addUser() {
       </div>
       <div className="birthdate">
         <lable htmlFor="birthdate"></lable>
-        <input type="text" required name="birthdate" placeholder="Birthdate" />
+        <input type="date" required name="birthdate" placeholder="Birthdate" />
       </div>
       {/* <div className="gender">
         <lable htmlFor="gender"></lable>
@@ -25,7 +25,7 @@ function addUser() {
       </div>
       <div className="anniversary">
         <lable htmlFor="anniversary"></lable>
-        <input type="text" name="anniversary" placeholder="Anniversary Date" />
+        <input type="date" name="anniversary" placeholder="12/12/2021"/>
       </div>
       <div className="relationship">
         <lable htmlFor="relationship"></lable>
