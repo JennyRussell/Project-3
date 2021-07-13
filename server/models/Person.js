@@ -2,13 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class User extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
+class Person extends Model {
+  
 }
 
-User.init(
+Person.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -24,19 +22,12 @@ User.init(
     type: DataTypes.STRING,
     allowNull: false,
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-    },
+
+    relationship: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        },
+
     birthdate: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -46,30 +37,26 @@ User.init(
       allowNull: false,
       unique: true,
   },
-    anniversary: {
+    special_occasion: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
   },
+  user_id: {
+    type: DataTypes.INTEGER,
+
+    references: {
+        model: 'user',
+        key: 'id',
+    }
 },
-  {
-    hooks: {
-    beforeCreate(newUserData) {
-        newUserData.password =  bcrypt.hashSync(newUserData.password, 10);
-        return newUserData;
-      },
-    },
+},
+{
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'Person',
   }
 );
 
-User.sync({
-  alter: true
-})
-
-
-
-module.exports = User;
+module.exports = Person;
