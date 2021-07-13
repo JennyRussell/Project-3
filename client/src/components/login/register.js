@@ -32,17 +32,19 @@ function Signup() {
   //     .catch((err) => console.log(err));
   // };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(newUser);
-    Axios.post("http://localhost:3001/register", {
-      first_name: newUser.first_name,
-      lastName: newUser.last_name,
-      email: newUser.email,
-      password: newUser.password,
-      birthdate: newUser.birthdate,
-      phone_number: newUser.phone_number,
-      anniversary: newUser.anniversary,
+
+   const handleSubmit = event => {
+        event.preventDefault();
+        console.log(newUser);
+        Axios.post('http://localhost:3001/register', {
+        first_name: newUser.first_name,
+        lastName: newUser.last_name,
+        email: newUser.email,
+        password: newUser.password,
+        birthdate: newUser.birthdate, 
+        phone_number: newUser.phone_number, 
+        anniversary: newUser.anniversary,
+
     }).then(() => {
       alert("front end register submit worked");
     });
@@ -139,7 +141,7 @@ function Signup() {
           </div> */}
           <button
             className="btn-rg"
-            onClick={() => history.push("/userpage")}
+            // onClick={() => history.push("/userpage")}
             type="submit"
           >
             Create Account
