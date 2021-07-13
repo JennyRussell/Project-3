@@ -101,6 +101,14 @@ input {
   box-shadow: inset 0 0 0.5em 0 #e285bf, 0 0 0.5em 0 #e285bf; */
 }
 
+.UploadForm input,
+button {
+  /* margin: 10px; */
+  width: 175px;
+  height: 30px;
+  font-size: 12px;
+}
+
 @media only screen and (max-width: 950px) {
   container-rg {
     padding-left: 10px;
@@ -113,24 +121,39 @@ input {
 
 @media only screen and (max-width: 949px) {
   .container-rg {
+    margin: auto;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
   }
 
-  .row {
-    width: 160px;
+  .form-rg {
+    display: flex;
+    justify-content: center;
     margin: auto;
+    width: 100%;
+  }
+
+  .row {
+    display: flex;
+
+    align-items: center;
+    width: 140px;
   }
 }
 
 @media only screen and (max-width: 576px) {
   .container-rg {
+    height: 100vh;
     flex-direction: column;
-    align-items: center;
+    align-content: center;
   }
 
-  .row {
+  .form-rg {
+    margin-left: 70px;
+    /* display: flex;
+    justify-self: center;
+    align-items: center; */
     max-width: 160px;
-    margin: auto;
   }
 }
