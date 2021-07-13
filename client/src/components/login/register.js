@@ -1,12 +1,11 @@
 // import { useState } from "react";
 import AUTH from "../../utils/AUTH";
 import { useHistory } from "react-router-dom";
-import React, { useState, useEffect }  from "react";
-import Axios from 'axios';
-
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
+import Upload from "../Upload";
 
 function Signup() {
-
   const history = useHistory();
   const [newUser, setNewUser] = useState({
     first_name: "",
@@ -33,6 +32,7 @@ function Signup() {
   //     .catch((err) => console.log(err));
   // };
 
+
    const handleSubmit = event => {
         event.preventDefault();
         console.log(newUser);
@@ -44,10 +44,11 @@ function Signup() {
         birthdate: newUser.birthdate, 
         phone_number: newUser.phone_number, 
         anniversary: newUser.anniversary,
+
     }).then(() => {
-        alert('front end register submit worked')
-    })
-    };
+      alert("front end register submit worked");
+    });
+  };
 
   return (
     <div className="container-rg">
@@ -59,7 +60,8 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
-              type="text" required
+              type="text"
+              required
               placeholder="First Name"
               name="firstName"
               onChange={(e) =>
@@ -68,7 +70,8 @@ function Signup() {
             />
             <input
               className="registerInput"
-              type="text" required
+              type="text"
+              required
               placeholder="Last Name"
               name="lastName"
               onChange={(e) =>
@@ -79,7 +82,8 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
-              type="email" required
+              type="email"
+              required
               placeholder="Email"
               name="email"
               onChange={(e) =>
@@ -88,7 +92,8 @@ function Signup() {
             />
             <input
               className="registerInput"
-              type="password" required
+              type="password"
+              required
               placeholder="Password"
               name="password"
               onChange={(e) =>
@@ -99,7 +104,8 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
-              type="date" required
+              type="date"
+              required
               placeholder="birthdate"
               name="birthdate"
               onChange={(e) =>
@@ -108,7 +114,8 @@ function Signup() {
             />
             <input
               className="registerInput"
-              type="date" required
+              type="date"
+              required
               placeholder="Anniversary Date"
               name="anniversary"
               onChange={(e) =>
@@ -119,14 +126,19 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
-              type="number" required
+              type="number"
+              required
               placeholder="Phone Number"
               name="phoneNumber"
               onChange={(e) =>
                 setNewUser({ ...newUser, phone_number: e.target.value })
               }
             />
+            <Upload />
           </div>
+          {/* <div className="img-rg">
+            <Upload />
+          </div> */}
           <button
             className="btn-rg"
             // onClick={() => history.push("/userpage")}
@@ -141,3 +153,6 @@ function Signup() {
 }
 
 export default Signup;
+
+//dropdown for special date
+//add user photo
