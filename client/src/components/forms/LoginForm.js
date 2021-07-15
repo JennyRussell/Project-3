@@ -15,7 +15,11 @@ export function LoginForm(props) {
         const password = event.target[1].value
         Axios.post('http://localhost:3001/login', {
             email,
-            password
+            password,
+            headers: {
+                'content-Type': 'application/json'
+            },
+            withCredentials: true
         }).then((response) => {
             alert('front end login submit worked')
             console.log(response)

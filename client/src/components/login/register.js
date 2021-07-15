@@ -36,17 +36,31 @@ function Signup() {
    const handleSubmit = event => {
         event.preventDefault();
         console.log(newUser);
-        Axios.post('http://localhost:3001/register', {
-        first_name: newUser.first_name,
-        last_name: newUser.last_name,
-        email: newUser.email,
-        password: newUser.password,
-        birthdate: newUser.birthdate, 
-        phone_number: newUser.phone_number, 
-        anniversary: newUser.anniversary,
-    }).then(() => {
-        alert('front end register submit worked')
-    })
+        const URL = 'http://localhost:3001/register'
+        fetch( URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            first_name: newUser.first_name,
+            last_name: newUser.last_name,
+            email: newUser.email,
+            password: newUser.password,
+            birthdate: newUser.birthdate, 
+            phone_number: newUser.phone_number, 
+            anniversary: newUser.anniversary,
+          })
+        })
+          .then( res => res.json())
+          .then( response => {
+            console.log("json response is", response)
+          })
+    //     Axios.post('http://localhost:3001/register', {
+
+    // }).then(() => {
+    //     alert('front end register submit worked')
+    // })
     };
 
   return (
