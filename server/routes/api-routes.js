@@ -1,6 +1,8 @@
 const router = require('express').Router();
+const session = require('express-session');
 const Person = require('../models/Person');
 const User = require('../models/User');
+
 
 router.get('/', (req, res) => {
 	res.send("welcome to the DB");
@@ -31,6 +33,7 @@ router.get('/currentuser', async (req, res) => {
 
 router.post('/register', async (req, res) => {
 	console.log(req.body)
+	console.log(req.session)
 	try {
 		const dbUserData = await User.create({
 			first_name: req.body.first_name,
@@ -42,13 +45,12 @@ router.post('/register', async (req, res) => {
 			anniversary: req.body.anniversary,
 		});
 
+		req.session.loggedIn = true;
+		req.session.id = dbUserData.id
 		req.session.save(() => {
-			req.session.loggedIn = true;
-			req.session.user_id = dbUserData.id
 
-			res.status(200).cookie({
-				test: 'hi',
-			}).json({
+			res.status(200)
+			.json({
 				user: {
 					first_name: dbUserData.first_name,
 					last_name: dbUserData.last_name,
@@ -58,6 +60,8 @@ router.post('/register', async (req, res) => {
 					anniversary: dbUserData.anniversary
 				}
 			});
+
+			console.log(req.session)
 		});
 	} catch (err) {
 		console.log(err);
@@ -67,6 +71,7 @@ router.post('/register', async (req, res) => {
 
 router.post('/person', async (req, res) => {
 	console.log(req.body)
+	console.log(req.session)
 	try {
 		const dbPersonData = await Person.create({
 			first_name: req.body.first_name,
@@ -75,23 +80,18 @@ router.post('/person', async (req, res) => {
 			birthdate: req.body.birthdate,
 			phone_number: req.body.phone_number,
 			special_occasion: req.body.special_occasion,
+			user_id: req.session.user_id,
+
 
 		});
 
-		req.session.save(() => {
-			req.session.loggedIn = true;
-
-			res.status(200).json(dbPersonData);
-		});
+		res.status(200).json(dbPersonData);
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
 	}
 });
 
-router.get('/person', async (req, res) => {
-
-});
 
 router.post('/login', async (req, res) => {
 	try {
@@ -126,8 +126,8 @@ router.post('/login', async (req, res) => {
 			req.session.user_id = dbUserData.id
 
 			res
-				.status(200).cookie({
-					tdomain: '*',
+				.status(200).cookie('sid', {
+					user_id: dbUserData.id,
 					maxAge: 10000 * 60 * 6 * 24,})
 				.json({
 					user: {
@@ -136,7 +136,8 @@ router.post('/login', async (req, res) => {
 						email: dbUserData.email,
 						birthdate: dbUserData.birthdate,
 						phone_number: dbUserData.phone_number,
-						anniversary: dbUserData.anniversary
+						anniversary: dbUserData.anniversary,
+						user_id: dbUserData.id,
 					}, message: 'You are now logged in!'
 				});
 		});

@@ -13,7 +13,7 @@ export function LoginForm(props) {
         //console.log(event);
         const email = event.target[0].value
         const password = event.target[1].value
-        Axios.post('http://localhost:3001/login', {
+        Axios.post('/api/login', {
             email,
             password,
             headers: {

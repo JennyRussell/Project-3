@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import AUTH from "../../utils/AUTH";
+// import AUTH from "../../utils/AUTH";
 import { useHistory } from "react-router-dom";
 import React, { useState, useEffect }  from "react";
 import Axios from 'axios';
@@ -36,7 +36,7 @@ function Signup() {
    const handleSubmit = event => {
         event.preventDefault();
         console.log(newUser);
-        const URL = 'http://localhost:3001/register'
+        const URL = '/api/register'
         fetch( URL, {
           method: 'POST',
           headers: {

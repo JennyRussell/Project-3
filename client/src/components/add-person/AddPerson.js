@@ -21,13 +21,17 @@ function AddPerson () {
    const handleSubmit = event => {
         event.preventDefault();
         console.log(newPerson);
-        Axios.post('http://localhost:3001/person', {
+        Axios.post('/api/person', {
         first_name: newPerson.first_name,
         last_name: newPerson.last_name,
         relationship: newPerson.relationship,
         birthdate: newPerson.birthdate, 
         phone_number: newPerson.phone_number, 
        special_occasion: newPerson.special_occasion,
+       headers: {
+        'content-Type': 'application/json'
+    },
+    withCredentials: true
     }).then(() => {
         alert('add person worked')
     })
