@@ -27,7 +27,7 @@ function AddPerson () {
         relationship: newPerson.relationship,
         birthdate: newPerson.birthdate, 
         phone_number: newPerson.phone_number, 
-       special_occasion: newPerson.anniversary,
+       special_occasion: newPerson.special_occasion,
     }).then(() => {
         alert('add person worked')
     })
@@ -77,18 +77,20 @@ function AddPerson () {
               }/>
               <label htmlFor="anniversary"></label>
               <input className="input m-1" 
-              type="text" name="phone number" 
+              type="text" name="phone_number" 
               placeholder="Phone Number" 
               onChange={(e) =>
                 setNewPerson({ ...newPerson, phone_number: e.target.value })
               }/>
               <label htmlFor="special-occasion"></label>
               <input className="input m-1" 
-              type="date" name="special" 
+              type="date" name="special_occasion" 
               placeholder="Special Occasion" 
               onChange={(e) =>
                 setNewPerson({ ...newPerson, special_occasion: e.target.value })
               }/>
+
+
             </div>
           </div>
           <div className="flex justify-center">
