@@ -38,7 +38,7 @@ function Signup() {
         console.log(newUser);
         Axios.post('http://localhost:3001/register', {
         first_name: newUser.first_name,
-        lastName: newUser.last_name,
+        last_name: newUser.last_name,
         email: newUser.email,
         password: newUser.password,
         birthdate: newUser.birthdate, 
@@ -61,7 +61,7 @@ function Signup() {
               className="registerInput"
               type="text" required
               placeholder="First Name"
-              name="firstName"
+              name="first_name"
               onChange={(e) =>
                 setNewUser({ ...newUser, first_name: e.target.value })
               }
@@ -70,7 +70,7 @@ function Signup() {
               className="registerInput"
               type="text" required
               placeholder="Last Name"
-              name="lastName"
+              name="last_name"
               onChange={(e) =>
                 setNewUser({ ...newUser, last_name: e.target.value })
               }
@@ -121,7 +121,7 @@ function Signup() {
               className="registerInput"
               type="number" required
               placeholder="Phone Number"
-              name="phoneNumber"
+              name="phone_number"
               onChange={(e) =>
                 setNewUser({ ...newUser, phone_number: e.target.value })
               }
