@@ -94,7 +94,7 @@ function AddPerson () {
             </div>
           </div>
           <div className="flex justify-center">
-          <img className="icon w-42 h-36 m-2 flex" src={imagePh} alt="pic"></img>
+          <img className="icon w-42 h-36 m-5 flex" src={imagePh} alt="pic"></img>
           </div>
           
           <div className="footer">
