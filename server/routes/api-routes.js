@@ -80,7 +80,7 @@ router.post('/person', async (req, res) => {
 			birthdate: req.body.birthdate,
 			phone_number: req.body.phone_number,
 			special_occasion: req.body.special_occasion,
-			user_id: req.session.user_id,
+			person_id: 1,
 
 
 		});
@@ -151,3 +151,5 @@ router.post('/login', async (req, res) => {
 
 
 module.exports = router;
+
+//Person need to be created first and when the person is created it should attach the ID to who the USER is to build that relationship

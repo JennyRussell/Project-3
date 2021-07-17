@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const { object } = require('joi');
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -49,6 +50,10 @@ User.init(
     anniversary: {
       type: DataTypes.DATE,
       allowNull: false,
+  },
+  person_id: {
+  type: DataTypes.INTEGER,
+  references: {model: 'person', key: 'id'},
   },
 },
   {

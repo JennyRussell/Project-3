@@ -5,7 +5,7 @@ class Person extends Model {
 
 }
 
-Person.init(
+Event.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,36 +13,29 @@ Person.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        first_name: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        last_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
+        all_day: {
+            type: Boolean,
+            allowNull: true,
         },
-
-        relationship: {
+        description: {
             type: DataTypes.STRING,
-            allowNull: false,
-        },
-
-        birthdate: {
-            type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
         },
         phone_number: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
         },
-        special_occasion: {
+        start_date: {
             type: DataTypes.DATE,
-            allowNull: true,
+            allowNull: false,
         },
-        person_id: {
-            type: DataTypes.INTEGER,
-            references: {model: 'person', key: 'id'},
+        end_date: {
+            type: DataTypes.DATE,
             },
         },
     {
@@ -50,8 +43,8 @@ Person.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'person',
+        modelName: 'event',
     }
 );
 
-module.exports = Person;
+module.exports = Event;
