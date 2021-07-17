@@ -48,7 +48,7 @@ function UserPage() {
 
   useEffect(() => {
     Axios.get(
-      `http://localhost:3001/upload/byUser/${localStorage.getItem("username")}`
+      `http://localhost:3001/form/user/${localStorage.getItem("first_name")}`
     ).then((response) => {
       setYourUploads(response.data);
     });
@@ -60,7 +60,7 @@ function UserPage() {
         <h1 className="m-4 text-6xl">Welcome</h1>
       </nav>
       <div className="text-left">
-        <h1 className="m-5">{localStorage.getItem("username")}</h1>
+        <h1 className="m-5">{localStorage.getItem("first_name")}</h1>
         <h1 className="ml-5">My People:</h1>
       </div>
       <div className="flex">
@@ -83,11 +83,32 @@ function UserPage() {
     </div>
   );
 
-  // const [curr, setCurr] = useState({});
+  // const [curr, setCurr] = useState({})
 
-  function handleSubmit() {
-    history.push("/add-person");
-  }
+  // function handleSubmit(){
+  //   history.push('/add-person')
+
+  // }
+
+  //   return (
+  //       <div>
+  //           <nav className='welcome w-100 h-24 border-2'>
+  //               <h1 className='m-4 text-6xl'>Welcome</h1>
+  //           </nav>
+  //           <div className='text-left'>
+  //               <h1 className='m-5'>Hello, F-name L-name!</h1>
+  //               <h1 className='ml-5'>My People:</h1>
+  //           </div>
+  //           <div className="flex">
+  //               <People />
+  //               <div className='ml-5'>
+  //               <button className="btn button" onClick={() => history.push('/add-person')}> <img className="icon w-30 h-30 m-2 border-1 m-5" src={addUser} alt="DVBSB"></img></button>
+  //               </div>
+  //               <Calendar localizer={localizer} events={events} />
+  //           </div>
+  //       </div>
+
+  //   )
 
   // return (
   //   <div>

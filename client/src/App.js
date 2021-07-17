@@ -10,29 +10,25 @@ import AddPerson from "./components/add-person/AddPerson";
 import AUTH from "./utils/AUTH";
 import UserContext from "./utils/UserContext";
 
-
-
-
-
 function App(props) {
   const [user, setUser] = useState();
 
-  const handleUser = async () => {
-    await AUTH.getUser().then((res) => {
-      if (res.data._id) {
-        return setUser(res.data);
-      }
-    });
-  };
+  // const handleUser = async () => {
+  //   await AUTH.getUser().then((res) => {
+  //     if (res.data._id) {
+  //       return setUser(res.data);
+  //     }
+  //   });
+  // };
 
-  const handleLogout = async () => {
-    await AUTH.logout().then((res) => {
-      console.log("successfully logged out!");
-      if (res.status === 200) {
-        setUser({ loggedIn: false });
-      }
-    });
-  };
+  // const handleLogout = async () => {
+  //   await AUTH.logout().then((res) => {
+  //     console.log("successfully logged out!");
+  //     if (res.status === 200) {
+  //       setUser({ loggedIn: false });
+  //     }
+  //   });
+  // };
 
   return (
     <div className="App">

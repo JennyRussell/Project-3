@@ -112,7 +112,7 @@ function Signup() {
             />
             <input
               className="registerInput"
-              type="special date"
+              type="date"
               required
               placeholder="Anniversary Date"
               name="anniversary"
