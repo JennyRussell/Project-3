@@ -32,7 +32,7 @@ function Welcome() {
                 </label>
                 <button onClick={() => history.push('/userpage')} className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-2">Login</button>
                 </form> */}
-                <LoginForm />
+                <LoginForm history={history}/>
                 </div>
             </nav>
             <div className="jumbotron text-white" style={{ backgroundImage: `url(${forgetmenots})` }}>

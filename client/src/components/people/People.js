@@ -14,7 +14,12 @@ function People() {
     console.log("clicked!");
     //trigger the profile page to populate
   };
-  const history = useHistory();
+  let history = useHistory();
+
+  const redirect = () => {
+    history.push('/text')
+  }
+
   return (
     <div className="">
       <img
@@ -25,8 +30,8 @@ function People() {
       <div className="ml-5">
         <button>
           <img
-            onClick={clicked()}
-            className="icon w-10 h-10 border-1"
+            onClick={redirect}
+            className="icon w-10 h-10 border-1 button btn"
             src={text}
             alt="text"
           ></img>
