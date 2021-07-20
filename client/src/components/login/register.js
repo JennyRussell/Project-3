@@ -43,6 +43,7 @@ function Signup() {
       birthdate: newUser.birthdate,
       phone_number: newUser.phone_number,
       anniversary: newUser.anniversary,
+
     }).then(() => {
       alert("front end register submit worked");
     });
@@ -61,7 +62,7 @@ function Signup() {
               type="text"
               required
               placeholder="First Name"
-              name="firstName"
+              name="first_name"
               onChange={(e) =>
                 setNewUser({ ...newUser, first_name: e.target.value })
               }
@@ -71,7 +72,7 @@ function Signup() {
               type="text"
               required
               placeholder="Last Name"
-              name="lastName"
+              name="last_name"
               onChange={(e) =>
                 setNewUser({ ...newUser, last_name: e.target.value })
               }
@@ -127,7 +128,7 @@ function Signup() {
               type="number"
               required
               placeholder="Phone Number"
-              name="phoneNumber"
+              name="phone_number"
               onChange={(e) =>
                 setNewUser({ ...newUser, phone_number: e.target.value })
               }
