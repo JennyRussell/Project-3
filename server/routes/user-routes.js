@@ -7,6 +7,24 @@ router.get('/', (req, res) => {
   
 })
 
+router.post('/auth/login', (req, res) => {
+  try {
+      console.log(req.body.email);
+      //1. lookup email
+      //2. validate password against given pw
+      //3. return salted authToken
+
+      res.status(200).json({authToken: "akjshdajkshdak"});
+
+    
+  } catch (err) {
+
+  }
+  // did the user login?
+  // yes -> return auth code
+  // no -> throw error, like invalid user
+})
+
 router.post('/register', async (req, res) => {
   console.log(req.body)
   try {
@@ -18,7 +36,6 @@ router.post('/register', async (req, res) => {
         birthdate: req.body.birthdate,
         phone_number: req.body.phone_number,
         anniversary: req.body.anniversary,
-        
   
       });
   

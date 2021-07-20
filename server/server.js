@@ -8,9 +8,21 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const routes = require('./routes/user-routes');
 const sequelize = require('./config/connection');
 const User = require('./models/User')
+const bodyParser = require('body-parser');
+const pino = require('express-pino-logger')();
+
+const client = require('twilio')(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
 
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
+app.use(pino);
+
 
 const PORT = process.env.PORT || 3001;
 
