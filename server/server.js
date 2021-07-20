@@ -1,6 +1,22 @@
 const express = require("express");
 // const bodyParser = require('body-parser')
 // const mysql = require("mysql")
+<<<<<<< HEAD
+const path = require('path');
+const cors = require('cors')
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const routes = require('./routes/user-routes');
+const sequelize = require('./config/connection');
+const User = require('./models/User')
+const bodyParser = require('body-parser');
+const pino = require('express-pino-logger')();
+
+const client = require('twilio')(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
+=======
 const path = require("path");
 const cors = require("cors");
 const session = require("express-session");
@@ -8,6 +24,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const routes = require("./routes/user-routes");
 const sequelize = require("./config/connection");
 const User = require("./models/User");
+>>>>>>> 6a83e25b3f98fb05054b3c070ce21d1059c100f1
 
 const http = require("http");
 const Video = express();
@@ -42,6 +59,11 @@ io.on("connection", (socket) => {
 server.listen(8000, () => console.log("server is running on port 8000"));
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
+app.use(pino);
+
 
 const PORT = process.env.PORT || 3001;
 

@@ -9,34 +9,31 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddPerson from "./components/add-person/AddPerson";
 import AUTH from "./utils/AUTH";
 import UserContext from "./utils/UserContext";
-
 import SMSForm from "./components/SMSForm";
 
 
 
 
-import Vid from "./components/Vid";
-
 
 function App(props) {
   const [user, setUser] = useState();
 
-  // const handleUser = async () => {
-  //   await AUTH.getUser().then((res) => {
-  //     if (res.data._id) {
-  //       return setUser(res.data);
-  //     }
-  //   });
-  // };
+  const handleUser = async () => {
+    await AUTH.getUser().then((res) => {
+      if (res.data._id) {
+        return setUser(res.data);
+      }
+    });
+  };
 
-  // const handleLogout = async () => {
-  //   await AUTH.logout().then((res) => {
-  //     console.log("successfully logged out!");
-  //     if (res.status === 200) {
-  //       setUser({ loggedIn: false });
-  //     }
-  //   });
-  // };
+  const handleLogout = async () => {
+    await AUTH.logout().then((res) => {
+      console.log("successfully logged out!");
+      if (res.status === 200) {
+        setUser({ loggedIn: false });
+      }
+    });
+  };
 
   return (
     <div className="App">
@@ -59,13 +56,8 @@ function App(props) {
               <AddPerson />
             </Route>
 
-
             <Route exact path="/text">
               <SMSForm />
-
-            <Route exact path="/vid">
-              <Vid />
-
             </Route>
           </Switch>
         </Router>
