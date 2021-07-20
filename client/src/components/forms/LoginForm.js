@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // import { useHistory } from 'react-router-dom';
 import { useInput } from '../hooks/input-hook';
 
+
 import Axios from 'axios'
 
 
@@ -66,7 +67,3 @@ export function LoginForm(props) {
                 />
             </label>
             {/* onClick={() => history.push('/userpage')}  */}
-            <input type="submit" value="Login" className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-2"></input>
-        </form>
-    )
-}

@@ -1,12 +1,11 @@
 // import { useState } from "react";
 // import AUTH from "../../utils/AUTH";
 import { useHistory } from "react-router-dom";
-import React, { useState, useEffect }  from "react";
-import Axios from 'axios';
-
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
+import Upload from "../Upload";
 
 function Signup() {
-
   const history = useHistory();
   const [newUser, setNewUser] = useState({
     first_name: "",
@@ -33,6 +32,7 @@ function Signup() {
   //     .catch((err) => console.log(err));
   // };
 
+
    const handleSubmit = event => {
         event.preventDefault();
         console.log(newUser);
@@ -56,12 +56,7 @@ function Signup() {
           .then( response => {
             console.log("json response is", response)
           })
-    //     Axios.post('http://localhost:3001/register', {
 
-    // }).then(() => {
-    //     alert('front end register submit worked')
-    // })
-    };
 
   return (
     <div className="container-rg">
@@ -73,18 +68,23 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
+
               type="text" required
+
               placeholder="First Name"
-              name="firstName"
+              name="first_name"
               onChange={(e) =>
                 setNewUser({ ...newUser, first_name: e.target.value })
               }
             />
             <input
               className="registerInput"
-              type="text" required
+
+              type="text"
+              required
               placeholder="Last Name"
-              name="last_Name"
+              name="last_name"
+
               onChange={(e) =>
                 setNewUser({ ...newUser, last_name: e.target.value })
               }
@@ -93,7 +93,9 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
+
               type="email" required
+
               placeholder="Email"
               name="email"
               onChange={(e) =>
@@ -102,7 +104,8 @@ function Signup() {
             />
             <input
               className="registerInput"
-              type="password" required
+            type="password" required
+
               placeholder="Password"
               name="password"
               onChange={(e) =>
@@ -113,7 +116,9 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
+
               type="date" required
+
               placeholder="birthdate"
               name="birthdate"
               onChange={(e) =>
@@ -122,8 +127,10 @@ function Signup() {
             />
             <input
               className="registerInput"
+
               type="date" required
-              placeholder="Anniversary Date"
+              placeholder="
+"
               name="anniversary"
               onChange={(e) =>
                 setNewUser({ ...newUser, anniversary: e.target.value })
@@ -133,17 +140,22 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
+
               type="number" required
               placeholder="Phone Number"
-              name="phoneNumber"
+              name="phone_number"
               onChange={(e) =>
                 setNewUser({ ...newUser, phone_number: e.target.value })
               }
             />
+            <Upload />
           </div>
+          {/* <div className="img-rg">
+            <Upload />
+          </div> */}
           <button
             className="btn-rg"
-            // onClick={() => history.push("/userpage")}
+            onClick={() => history.push("/userpage")}
             type="submit"
           >
             Create Account
@@ -155,3 +167,7 @@ function Signup() {
 }
 
 export default Signup;
+
+//dropdown for special date
+//add user photo
+

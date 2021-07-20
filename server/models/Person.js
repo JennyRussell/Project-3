@@ -52,6 +52,8 @@ Person.init(
         underscored: true,
         modelName: 'person',
     }
-);
+
+
+
 
 module.exports = Person;
