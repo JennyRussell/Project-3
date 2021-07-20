@@ -21,13 +21,20 @@ function AddPerson () {
    const handleSubmit = event => {
         event.preventDefault();
         console.log(newPerson);
-        Axios.post('http://localhost:3001/add-person', {
+
+        Axios.post('/api/person', {
         first_name: newPerson.first_name,
         last_name: newPerson.last_name,
         relationship: newPerson.relationship,
         birthdate: newPerson.birthdate, 
         phone_number: newPerson.phone_number, 
        special_occasion: newPerson.special_occasion,
+          
+       headers: {
+        'content-Type': 'application/json'
+    },
+    withCredentials: true
+
     }).then(() => {
         alert('add person worked')
     })
@@ -75,21 +82,28 @@ function AddPerson () {
               onChange={(e) =>
                 setNewPerson({ ...newPerson, relationship: e.target.value })
               }/>
+
+              <label htmlFor="phone_name"></label>
+
               <label htmlFor="anniversary"></label>
+
               <input className="input m-1" 
               type="text" name="phone_number" 
               placeholder="Phone Number" 
               onChange={(e) =>
                 setNewPerson({ ...newPerson, phone_number: e.target.value })
               }/>
+
+              
+
               <label htmlFor="special-occasion"></label>
+
               <input className="input m-1" 
               type="date" name="special_occasion" 
               placeholder="Special Occasion" 
               onChange={(e) =>
                 setNewPerson({ ...newPerson, special_occasion: e.target.value })
               }/>
-
 
             </div>
           </div>

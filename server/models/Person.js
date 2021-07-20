@@ -1,62 +1,59 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Person extends Model {
-  
+
 }
 
 Person.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    first_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    last_name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    },
-
-    relationship: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        first_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        last_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
 
-    birthdate: {
-      type: DataTypes.DATE,
-      allowNull: false,
-  },
-    phone_number: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-  },
-    special_occasion: {
-      type: DataTypes.DATE,
-      allowNull: true,
-  },
-  user_id: {
-    type: DataTypes.INTEGER,
+        relationship: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
 
-    references: {
-        model: 'user',
-        key: 'id',
+        birthdate: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        phone_number: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+        },
+        special_occasion: {
+            type: DataTypes.DATE,
+            allowNull: true,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {model: 'person', key: 'id'},
+            },
+        },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'person',
     }
-},
-},
-{
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'Person',
-  }
-);
+
+
+
 
 module.exports = Person;

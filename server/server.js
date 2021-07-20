@@ -1,7 +1,7 @@
 const express = require("express");
 // const bodyParser = require('body-parser')
 // const mysql = require("mysql")
-<<<<<<< HEAD
+
 const path = require('path');
 const cors = require('cors')
 const session = require('express-session');
@@ -16,15 +16,6 @@ const client = require('twilio')(
   process.env.TWILIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_TOKEN
 );
-=======
-const path = require("path");
-const cors = require("cors");
-const session = require("express-session");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
-const routes = require("./routes/user-routes");
-const sequelize = require("./config/connection");
-const User = require("./models/User");
->>>>>>> 6a83e25b3f98fb05054b3c070ce21d1059c100f1
 
 const http = require("http");
 const Video = express();
@@ -85,9 +76,10 @@ app.use(
     extended: true,
   })
 );
+
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(routes);
+app.use('/api',routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));

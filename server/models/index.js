@@ -8,7 +8,8 @@ User.hasMany(Person, {
 });
 
 Person.belongsTo(User, {
-    foreignKey: 'user_id'
+  foreignKey: 'user_id',
+
   });
 
 

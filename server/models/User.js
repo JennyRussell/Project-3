@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const { object } = require('joi');
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -50,6 +51,10 @@ User.init(
       type: DataTypes.DATE,
       allowNull: false,
   },
+  user_id: {
+  type: DataTypes.INTEGER,
+  references: {model: 'person', key: 'id'},
+  },
 },
   {
     hooks: {
@@ -69,7 +74,5 @@ User.init(
 User.sync({
   alter: true
 })
-
-
 
 module.exports = User;
