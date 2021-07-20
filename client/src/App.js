@@ -9,6 +9,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddPerson from "./components/add-person/AddPerson";
 import AUTH from "./utils/AUTH";
 import UserContext from "./utils/UserContext";
+import SMSForm from "./components/SMSForm";
+
+
+
+
 
 function App(props) {
   const [user, setUser] = useState();
@@ -49,6 +54,10 @@ function App(props) {
 
             <Route exact path="/add-person">
               <AddPerson />
+            </Route>
+
+            <Route exact path="/text">
+              <SMSForm />
             </Route>
           </Switch>
         </Router>

@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS forgetmenot_db;
+DROP DATABASE IF EXISTS forgetMeNot_db;
 
-CREATE DATABASE forgetmenot_db;
+CREATE DATABASE forgetMeNot_db;

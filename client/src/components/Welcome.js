@@ -6,6 +6,8 @@ import bdaycake from "./bdaycake.png";
 import graduation from "./graduation.png";
 import champagne from "./champagne.png";
 import { useHistory } from 'react-router-dom';
+import { LoginForm } from "./forms/LoginForm";
+
 
 
 
@@ -21,7 +23,7 @@ function Welcome() {
                 <img className="icon w-24 h-24 border-1 m-3" src={champagne} alt=""></img>
                 </div>
 <div className="mr-5">
-                <form className="input-group mr-2 mt-10">
+                {/* <form className="input-group mr-2 mt-10">
                 <label className="label" htmlFor="email">
                 <input className="email border-2 w-40 h-10 bg-white m-2" placeholder="Email"></input>
                 </label>
@@ -29,7 +31,8 @@ function Welcome() {
                 <input className="password border-2 w-40 h-10 bg-white m-2" placeholder="Password"></input>
                 </label>
                 <button onClick={() => history.push('/userpage')} className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-2">Login</button>
-                </form>
+                </form> */}
+                <LoginForm history={history}/>
                 </div>
             </nav>
             <div className="jumbotron text-white" style={{ backgroundImage: `url(${forgetmenots})` }}>
