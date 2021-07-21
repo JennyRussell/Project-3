@@ -52,7 +52,7 @@ Person.init(
         underscored: true,
         modelName: 'person',
     }
-
+)
 
 
 
