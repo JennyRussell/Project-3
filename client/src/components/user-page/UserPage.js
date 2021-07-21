@@ -51,7 +51,8 @@ function UserPage() {
 
   useEffect(() => {
     Axios.get(
-      `http://localhost:3001/form/user/${localStorage.getItem("first_name")}`
+      `http://localhost:3001/form/user/${localStorage.getItem("first_name")}`,
+      console.log(`${localStorage.getItem("first_name")}`)
     ).then((response) => {
       setYourUploads(response.data);
     });
