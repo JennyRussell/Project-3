@@ -1,10 +1,8 @@
 // import { useState } from "react";
 // import AUTH from "../../utils/AUTH";
 import { useHistory } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import Axios from "axios";
-import Upload from "../Upload";
-
+import React, { useState, useEffect }  from "react";
+import Axios from 'axios';
 function Signup() {
   const history = useHistory();
   const [newUser, setNewUser] = useState({
@@ -16,7 +14,6 @@ function Signup() {
     phone_number: "",
     anniversary: "",
   });
-
   // const handleSubmit = (e) => {
   //   e.preventDefault();
   //   console.log("click");
@@ -31,8 +28,6 @@ function Signup() {
   //     })
   //     .catch((err) => console.log(err));
   // };
-
-
    const handleSubmit = event => {
         event.preventDefault();
         console.log(newUser);
@@ -56,35 +51,33 @@ function Signup() {
           .then( response => {
             console.log("json response is", response)
           })
-
-
+    //     Axios.post('http://localhost:3001/register', {
+    // }).then(() => {
+    //     alert('front end register submit worked')
+    // })
+    };
   return (
+    
     <div className="container-rg">
-      <div className="content-rg">
-        <h2>Sign Up</h2>
+      <div className="content-rg m-4">
       </div>
       <div className="form-rg">
-        <form className="form-inside" onSubmit={handleSubmit}>
+        <form className="form-inside pb-5" onSubmit={handleSubmit}>
           <div className="row">
             <input
-              className="registerInput"
-
+              className="registerInput mr-4"
               type="text" required
-
               placeholder="First Name"
-              name="first_name"
+              name="firstName"
               onChange={(e) =>
                 setNewUser({ ...newUser, first_name: e.target.value })
               }
             />
             <input
               className="registerInput"
-
-              type="text"
-              required
+              type="text" required
               placeholder="Last Name"
-              name="last_name"
-
+              name="last_Name"
               onChange={(e) =>
                 setNewUser({ ...newUser, last_name: e.target.value })
               }
@@ -92,10 +85,8 @@ function Signup() {
           </div>
           <div className="row">
             <input
-              className="registerInput"
-
+              className="registerInput mr-4"
               type="email" required
-
               placeholder="Email"
               name="email"
               onChange={(e) =>
@@ -104,8 +95,7 @@ function Signup() {
             />
             <input
               className="registerInput"
-            type="password" required
-
+              type="password" required
               placeholder="Password"
               name="password"
               onChange={(e) =>
@@ -115,10 +105,8 @@ function Signup() {
           </div>
           <div className="row">
             <input
-              className="registerInput"
-
+              className="registerInput mr-4"
               type="date" required
-
               placeholder="birthdate"
               name="birthdate"
               onChange={(e) =>
@@ -127,10 +115,8 @@ function Signup() {
             />
             <input
               className="registerInput"
-
               type="date" required
-              placeholder="
-"
+              placeholder="Anniversary Date"
               name="anniversary"
               onChange={(e) =>
                 setNewUser({ ...newUser, anniversary: e.target.value })
@@ -140,21 +126,16 @@ function Signup() {
           <div className="row">
             <input
               className="registerInput"
-
               type="number" required
               placeholder="Phone Number"
-              name="phone_number"
+              name="phoneNumber"
               onChange={(e) =>
                 setNewUser({ ...newUser, phone_number: e.target.value })
               }
             />
-            <Upload />
           </div>
-          {/* <div className="img-rg">
-            <Upload />
-          </div> */}
           <button
-            className="btn-rg"
+            className="btn-rg p-1 text"
             onClick={() => history.push("/userpage")}
             type="submit"
           >
@@ -165,9 +146,4 @@ function Signup() {
     </div>
   );
 }
-
 export default Signup;
-
-//dropdown for special date
-//add user photo
-

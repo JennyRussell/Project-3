@@ -27,8 +27,15 @@ export function LoginForm(props) {
             },
             withCredentials: true
         }).then((response) => {
-            alert('front end login submit worked')
-            console.log(response)
+            try
+             { 
+                if(response.status === 200) {
+                   const {history} =  props;
+                   history.push("/userpage");
+             }
+             }catch (err) {
+                    console.log(err)
+            }
         })
     };
 
@@ -48,6 +55,7 @@ export function LoginForm(props) {
 
 
     return (
+        <div>
         <form className="input-group mr-2 mt-10" onSubmit={handleSubmit}>
             <label className="label" htmlFor="email">
                 <input
@@ -64,6 +72,12 @@ export function LoginForm(props) {
                     required
                     className="password border-2 w-40 h-10 bg-white m-2"
                     placeholder="Password"
-                />
+                     />
             </label>
-            {/* onClick={() => history.push('/userpage')}  */}
+            <input type="submit" value="Login" className="login-btn rounded w-20 h-10 bg-pink-400 text-white mt-2 pl-3"></input>
+            </form>
+            </div>
+    )}
+
+export default LoginForm;
+
