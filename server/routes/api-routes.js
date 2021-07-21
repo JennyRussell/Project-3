@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     res.send("welcome to the DB");
 })
 router.get('/currentuser', async (req, res) => {
-    const user_id = req.session.user_id
+    const user_id = req.session.id
     const dbUserData = await User.findOne({
         where: {
             id: user_id
@@ -27,8 +27,8 @@ router.get('/currentuser', async (req, res) => {
 })
 router.get("/login", (req, res) => {
     try{
-      if (req.session.userId) {
-        res.send({ loggedIn: true, user: req.session.userId });
+      if (req.session.id) {
+        res.send({ loggedIn: true, user: req.session.id });
       } else {
         res.send({ loggedIn: false });
       }
